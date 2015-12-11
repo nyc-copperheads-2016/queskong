@@ -16,6 +16,8 @@ require 'active_record'
 require 'logger'
 
 require 'sinatra'
+require 'pry'
+require 'bcrypt'
 require "sinatra/reloader" if development?
 
 require 'erb'
