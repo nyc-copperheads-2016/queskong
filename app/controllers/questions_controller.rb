@@ -12,3 +12,9 @@ post '/surveys/:id/questions' do
     erb :'questions/new', locals: {survey: current_survey, errors: survey.errors.full_messages}
   end
 end
+
+get '/taken_surveys/:taken_survey_id/questions/:id' do
+  current_taken_survey = TakenSurvey.find_by(id: params[:taken_survey_id])
+  current_question = Question.find_by(id: params[:id])
+  erb :'questions/show', locals: {current_taken_survey: current_taken_survey, current_question: current_question}
+end

@@ -1,0 +1,13 @@
+<h1>Here is the list of surveys you can take!</h1>
+
+  <% surveys.each do |survey| %>
+  <div class= "survey_listing">
+    <%= survey.title %>
+    <%= survey.description %>
+    <form action="/taken_surveys" method="POST">
+      <input type="hidden" name="survey_id" value ="<%= survey.id %>">
+      <input type = "submit"  value="Take this survey!">
+    </form>
+  </div>
+  <% end %>
+
