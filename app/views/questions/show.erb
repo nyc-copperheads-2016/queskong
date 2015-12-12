@@ -8,8 +8,10 @@
       <input class="question-form-submit" type="submit" value="submit" >
     </form>
     <% if defined?(errors) %>
+    <ul>
       <% errors.each do |error| %>
-        <%= error %>
+        <li><%= error %></li>
       <% end %>
+    </ul>
     <% end %>
 </div>

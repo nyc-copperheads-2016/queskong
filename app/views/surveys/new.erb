@@ -6,3 +6,10 @@
   </div>
   <input type="submit" value="Make my Survey Title!"/>
 </form>
+<% if defined?(errors) %>
+<ul>
+  <% errors.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
