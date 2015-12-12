@@ -1,5 +1,5 @@
 <h3><%= current_question.content %></h3>
-<form action="/taken_surveys/<%= current_taken_survey.id %>/answers" method="post">
+<form class="question-form" action="/taken_surveys/<%= current_taken_survey.id %>/answers" method="post">
   <% current_question.possibilities.each do |possibility| %>
     <input type="radio" name="possibility_id" value="<%= possibility.id %>"><%= possibility.choice %>
   <% end %>
