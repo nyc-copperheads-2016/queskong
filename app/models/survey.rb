@@ -4,6 +4,9 @@ class Survey < ActiveRecord::Base
   has_many :questions
   has_many :takers, through: :taken_surveys, source: :taker
 
+  validates :title, presence: :true
+  validates :description, presence: :true
+
   def next_question_id(current_question_id = "none")
     if current_question_id == "none"
       questions.first.id
@@ -16,5 +19,4 @@ class Survey < ActiveRecord::Base
       end
     end
   end
-
 end

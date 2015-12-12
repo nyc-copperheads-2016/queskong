@@ -12,3 +12,7 @@ post '/taken_surveys' do
     erb :'/sessions/new', locals: {error: "Please login first before doing that!"}
   end
 end
+
+get '/taken_surveys/:id' do
+  erb :'taken_surveys/thanks', layout: !request.xhr?
+end
