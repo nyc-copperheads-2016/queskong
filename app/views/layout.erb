@@ -15,11 +15,26 @@
   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+<title>Survey Gorilla</title>
 </head>
 <body>
-<div id="content">
-  <%= yield %>
-</div>
+  <div id="navbar">
+    <span>
+      <a href="/">QUES KONG</a>
+      <% if logged_in? %>
+        <a href="/users/<%=current_user.id%>">Profile</a>
+        <form method ='post' action='/sessions'>
+          <input type='hidden' name='_method' value='DELETE' />
+          <input type='submit' value='Logout' />
+        </form>
+      <% else %>
+        <a href="/users/new">Sign Up!</a>
+        <a href="/sessions/new">Login</a>
+      <% end %>
+    <span>
+  </div>
+  <div id="content">
+    <%= yield %>
+  </div>
 </body>
 </html>
