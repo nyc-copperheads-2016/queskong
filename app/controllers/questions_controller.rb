@@ -8,12 +8,25 @@ post '/surveys/:id/questions' do
     end
       if params[:done?] == "Done. Finish my survey"
         questions = current_survey.questions
-        erb :'/surveys/edit', locals: {questions: questions, current_survey: current_survey}
+        if request.xhr?
+          erb :'/surveys/edit', locals: {questions: questions, current_survey: current_survey}, layout: false
+        else
+          erb :'/surveys/edit', locals: {questions: questions, current_survey: current_survey}
+        end
+
       else
-        erb :'questions/new', locals: {survey: current_survey}
+        if request.xhr?
+          erb :'questions/new', locals: {survey: current_survey}, layout: false
+        else
+          erb :'questions/new', locals: {survey: current_survey}
+        end
       end
   else
-    erb :'questions/new', locals: {survey: current_survey, errors: ["Questions must ask a question and have possible answers"] }
+    if request.xhr?
+      erb :'questions/new', locals: {survey: current_survey, errors: ["Questions must ask a question and have possible answers"] }, layout: false
+    else
+      erb :'questions/new', locals: {survey: current_survey, errors: ["Questions must ask a question and have possible answers"] }
+    end
   end
 end
 

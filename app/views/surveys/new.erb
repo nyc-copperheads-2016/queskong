@@ -1,11 +1,11 @@
 <h3>Survey-Create Wizard</h3>
-<form method="post" action="/surveys">
-  <div class="title">
-    <p><input type="text" name="title" placeholder="Your Title Goes Here"></p>
-    <p><textarea name="description" placeholder="Describe the purpose of your survey."></textarea></p>
-  </div>
-  <p><input type="submit" value="Make my Survey Title!"/></p>
-</form>
+  <form class ="make-title" method="post" action="/surveys">
+    <div class="title">
+      <p><input type="text" name="title" placeholder="Your Title Goes Here"></p>
+      <p><textarea name="description" placeholder="Describe the purpose of your survey."></textarea></p>
+    </div>
+    <p><input type="submit" value="Make my Survey Title!"/></p>
+  </form>
 <% if defined?(errors) %>
 <ul>
   <% errors.each do |error| %>
