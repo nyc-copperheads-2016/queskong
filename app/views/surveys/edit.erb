@@ -1,0 +1,15 @@
+<h1>Review and Edit your Survey Here</h1>
+  <form method="post" action="/surveys"/>
+  <input type="hidden" name="_method" value="put"/>
+    <% questions.each do |question| %>
+        <label>Question:</label>
+        <p><input name="question" type="text" value="<%= question.content %>"><p>
+        <label>Multiple Choices:</label>
+        <% question.possibilities.each do |possibility| %>
+          <p><input name="possibility" type="text" value="<%= possibility.choice %>"/></p>
+        <% end %>
+        <hr>
+    <% end %>
+    <input type="submit" value="Update and Publish My Survey!">
+  </form>
+

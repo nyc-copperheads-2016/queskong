@@ -11,8 +11,8 @@ class Possibility < ActiveRecord::Base
     possibilities
   end
 
-  def self.save_possibilities
-    Possibilitity.parse_possibilities.each do |possibility|
+  def self.save_possibilities(question, possibilities_string)
+    Possibility.parse_possibilities(question, possibilities_string).each do |possibility|
       possibility.save
     end
   end

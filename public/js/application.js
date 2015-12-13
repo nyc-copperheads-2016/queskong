@@ -14,4 +14,16 @@ $(document).ready(function() {
     })
   });
 
+  $('#login').on('click', function(event){
+    event.preventDefault();
+    $.ajax({
+      url: event.target.url,
+      method: 'get',
+    }).done(function(result){
+      $('#content').html(result);
+    }).fail(function(error){
+      console.log("Error: " + error);
+    })
+  });
+
 });
