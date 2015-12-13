@@ -1,0 +1,22 @@
+<h1><%=survey.title%></h1>
+<p><%=takers.length%> people have taken this survey</p>
+
+<%takers.each do |taker|%>
+  <p><%=taker.username%></p>
+<%end%>
+
+<%questions.each do |question|%>
+<!-- check every question -->
+  <p><%=question.content%></p>
+  <!-- print out its actual question -->
+  <%question.possibilities.each do |possibility|%>
+  <!-- for each possible answer -->
+    <p><%=possibility.choice%></p>
+<!-- print the content -->
+    <%possibility.answers.each do |answer|%>
+    <!-- print the user associated with that answer -->
+      <p><%=answer.taken_survey.taker.username%></p>
+    <%end%>
+  <%end%>
+
+<%end%>
