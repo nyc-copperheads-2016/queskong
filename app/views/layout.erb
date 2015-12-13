@@ -22,14 +22,14 @@
     <span>
       <a href="/">QUES KONG</a>
       <% if logged_in? %>
-        <a href="/users/<%=current_user.id%>">Profile</a>
-        <form method ='post' action='/sessions'>
+        <form class="float-right" method ='post' action='/sessions'>
           <input type='hidden' name='_method' value='DELETE' />
           <input type='submit' value='Logout' />
         </form>
+        <a class="float-right" href="/users/<%=current_user.id%>"><%= greeting_and_time_of_day %> </a>
       <% else %>
-        <a href="/users/new">Sign Up!</a>
-        <a href="/sessions/new">Login</a>
+        <a class="float-right" id="sign-up" href="/users/new">| Sign Up!</a>
+        <a class="float-right" id="login" href="/sessions/new">Login |</a>
       <% end %>
     <span>
   </div>
