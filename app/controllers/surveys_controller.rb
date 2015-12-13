@@ -31,3 +31,8 @@ put '/surveys' do
   # needs logic to edit and update survey / questions / possibilities
   redirect "/"
 end
+
+get '/surveys/:id' do
+  survey = Survey.find_by(id: params[:id])
+  erb :'/surveys/show', locals: {survey: survey}
+end

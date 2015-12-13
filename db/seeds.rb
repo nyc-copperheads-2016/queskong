@@ -1,0 +1,1 @@
+User.create(username: "james", password_hash: "kirkpatrick", race: "white", age: 25, sex: "male", religion: "none")

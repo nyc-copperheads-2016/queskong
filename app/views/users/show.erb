@@ -4,7 +4,7 @@
 <p>Last logged in: <%= long_form_date(user.updated_at) %></p>
 <h3><%= user.username%> has created: <%= user.surveys.length %> survey(s)!</h3>
 <% user.surveys.each do |survey| %>
-  <a href="/surveys"><%= survey.title %></a>
+  <a href="/surveys/<%=survey.id%>"><%= survey.title %></a>
   <br>
 <% end %>
 <p><%= user.username %> has taken: <%= user.taken_surveys.length %> surveys!</p>
