@@ -1,0 +1,8 @@
+<h2><%=survey.title%><h2>
+<h3><%=survey.description%><h3>
+<p>Total number of questions: <%=survey.questions.length%></p>
+<p><%=survey.takers.length%> people have taken this survey!</p>
+<form action="/taken_surveys" method="POST">
+      <input type="hidden" name="survey_id" value ="<%= survey.id %>">
+      <input type = "submit"  value="Take this survey!">
+</form>
