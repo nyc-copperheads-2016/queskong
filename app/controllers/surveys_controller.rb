@@ -20,3 +20,14 @@ get '/surveys' do
   surveys = Survey.all
   erb :'surveys/index', locals: {surveys: surveys}
 end
+
+get '/surveys/:id/edit' do
+  current_survey = Survey.find_by(id: params[:id])
+  questions = current_survey.questions
+  erb :'/surveys/edit', locals: {questions: questions, current_survey: current_survey}
+end
+
+put '/surveys' do
+  # needs logic to edit and update survey / questions / possibilities
+  redirect "/"
+end

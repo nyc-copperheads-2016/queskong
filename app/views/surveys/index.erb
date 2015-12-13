@@ -2,8 +2,8 @@
 
   <% surveys.each do |survey| %>
   <div class= "survey_listing">
-    <%= survey.title %>
-    <%= survey.description %>
+    <h4><%= survey.title %></h4>
+    <p><%= survey.description %></p>
     <form action="/taken_surveys" method="POST">
       <input type="hidden" name="survey_id" value ="<%= survey.id %>">
       <input type = "submit"  value="Take this survey!">
