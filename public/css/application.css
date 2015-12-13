@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
+h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-weight: 400;}
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
 h3 {font-size: 1.4em;}
@@ -24,7 +24,7 @@ del {text-decoration: line-through; color: #777777;}
 .justleft {text-align: left;}
 .justright {text-align: right;}
 .justcenter {text-align: center;}
-.center {margin-left: auto; margin-right: auto;}
+.center {margin-left: auto; margin-right: auto; text-align: center;}
 
 footer { font-size: 0.7em; margin-top: 2em;}
 
@@ -36,7 +36,7 @@ a {
 }
 
 a:visited {
-    color: #AAA;
+    color: #36AECC;
 }
 
 a:hover {
@@ -64,4 +64,54 @@ code {
     line-height: 1.4em;
     margin-left: -1em;
     overflow: auto;
+}
+#navbar {
+  background-color: #008FB2;
+  color: black;
+}
+
+#navbar a {
+  color: black;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-right input {
+  background: none;
+  border: none;
+}
+body {
+  background-color: #FF9F47;
+}
+.front-page-container {
+  margin: 0 auto;
+  width: 350px;
+  height: 100px;
+}
+
+.landing-page-button {
+  background-color: #FF8310;
+  width: 170px;
+  height: 170px;
+  text-align: center;
+  vertical-align: middle;
+  color: #B25600;
+  display: inline-block;
+  line-height: 150px;
+}
+
+.landing-page-button:hover {
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.landing-page-button a {
+  color: #B25600;
+}
+
+a:hover {
+    color: black;
 }
