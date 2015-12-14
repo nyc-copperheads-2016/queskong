@@ -1,18 +1,34 @@
 get '/surveys/new' do
   survey = Survey.new()
-  erb :'surveys/new'
+  if request.xhr?
+    erb :'surveys/new', layout: false
+  else
+    erb :'surveys/new'
+  end
 end
 
 post '/surveys' do
   if current_user
     new_survey = current_user.surveys.new(title: params[:title], description: params[:description])
     if new_survey.save
-      erb :'questions/new', locals: {survey: new_survey}
+      if request.xhr?
+        erb :'questions/new', locals: {survey: new_survey}, layout: false
+      else
+        erb :'questions/new', locals: {survey: new_survey}
+      end
     else
-      erb :'surveys/new', locals: {errors: new_survey.errors.full_messages}
+      if request.xhr?
+        erb :'surveys/new', locals: {errors: new_survey.errors.full_messages}, layout: false
+      else
+        erb :'surveys/new', locals: {errors: new_survey.errors.full_messages}
+      end
     end
   else
-    erb :'/sessions/new', locals: {error: "Please login first before doing that!"}
+    if request.xhr?
+      erb :'/sessions/new', locals: {error: "Please login first before doing that!"}, layout: false
+    else
+      erb :'/sessions/new', locals: {error: "Please login first before doing that!"}
+    end
   end
 end
 
