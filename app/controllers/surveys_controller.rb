@@ -43,8 +43,8 @@ get '/surveys/:id/edit' do
   erb :'/surveys/edit', locals: {questions: questions, current_survey: current_survey}
 end
 
+#did not get time to complete
 put '/surveys' do
-  # needs logic to edit and update survey / questions / possibilities
   redirect "/"
 end
 

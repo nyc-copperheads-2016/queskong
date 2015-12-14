@@ -1,5 +1,5 @@
 <h1>Review and Edit your Survey Here</h1>
-  <form method="post" action="/surveys"/>
+  <form method="post" class="edit-survey" action="/surveys"/>
   <input type="hidden" name="_method" value="put"/>
     <% questions.each do |question| %>
         <label>Question:</label>
@@ -10,6 +10,7 @@
         <% end %>
         <hr>
     <% end %>
-    <input type="submit" value="Update and Publish My Survey!">
+    <a href="/">Update and Publish My Survey!</a>
+    <!-- <input type="submit" value="Update and Publish My Survey!"> -->
   </form>
 
