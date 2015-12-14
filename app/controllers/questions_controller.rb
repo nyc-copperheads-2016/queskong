@@ -6,7 +6,8 @@ post '/surveys/:id/questions' do
     array_of_possibility_objs_for_new_question.each do |possibility|
       possibility.save
     end
-      if params[:done?] == "Done. Finish my survey"
+    # this next line isn't working vvvvvv
+      if params[:done] == "Done. Finish my survey"
         questions = current_survey.questions
         if request.xhr?
           erb :'/surveys/edit', locals: {questions: questions, current_survey: current_survey}, layout: false
