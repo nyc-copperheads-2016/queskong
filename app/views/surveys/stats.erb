@@ -1,22 +1,18 @@
 <h1><%=survey.title%></h1>
 <p><%=takers.length%> people have taken this survey</p>
-
+<p>List of survey takers' usernames:</p>
 <%takers.each do |taker|%>
-  <p><%=taker.username%></p>
+  <%=taker.username%>
 <%end%>
 
 <%questions.each do |question|%>
-<!-- check every question -->
-  <p><%=question.content%></p>
-  <!-- print out its actual question -->
+<hr>
+  <h3 style="color:black;"><%=question.content%></h3>
+  <ul>
   <%question.possibilities.each do |possibility|%>
-  <!-- for each possible answer -->
-    <p><%=possibility.choice%></p>
-<!-- print the content -->
-    <%possibility.answers.each do |answer|%>
-    <!-- print the user associated with that answer -->
-      <p><%=answer.taken_survey.taker.username%></p>
-    <%end%>
+    <li><h6><%=possibility.choice%></h6></li>
+      <p>Chosen by <%= possibility.answers.length %> survey takers out of <%= question.answers.length %> total survey takers</p>
+  </ul>
   <%end%>
 
 <%end%>

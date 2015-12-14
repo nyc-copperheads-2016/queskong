@@ -3,6 +3,7 @@
 <p>Set up their profile on: <%= long_form_date(user.created_at) %></p>
 <p>Last logged in: <%= long_form_date(user.updated_at) %></p>
 <h3><%= user.username%> has created: <%= user.surveys.length %> survey(s)!</h3>
+<p>Click on the survey you would like to see the results for below:</p>
 <% user.surveys.each do |survey| %>
   <a href="/surveys/<%=survey.id%>"><%= survey.title %></a>
   <br>
