@@ -33,7 +33,7 @@ post '/surveys' do
 end
 
 get '/surveys' do
-  surveys = Survey.all
+  surveys = Survey.where.not(maker: current_user)
   erb :'surveys/index', locals: {surveys: surveys}
 end
 
