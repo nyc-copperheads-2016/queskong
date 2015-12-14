@@ -2,8 +2,8 @@
   <h3><%= current_question.content %></h3>
     <form class="question-form" action="/taken_surveys/<%= current_taken_survey.id %>/answers" method="post">
       <% current_question.possibilities.each do |possibility| %>
-      <p><input type="radio" name="possibility_id" value="<%= possibility.id %>"></p>
-      <p><%= possibility.choice %></p>
+      <p><input type="radio" name="possibility_id" value="<%= possibility.id %>">
+      <%= possibility.choice %></p>
     <% end %>
       <input type="hidden" name="question_id" value="<%= current_question.id %>">
       <input class="question-form-submit" type="submit" value="submit" >
